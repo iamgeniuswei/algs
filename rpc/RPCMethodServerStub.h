@@ -6,14 +6,17 @@
 #define ALGS_RPCMETHODSERVERSTUB_H
 
 #include "RPCMethodServer.h"
-class RPCChannel;
-class RPCMethodServerStub : RPCMethodServer
+#include "RPCClientChannel.h"
+class RPCMethodServerStub : public RPCMethodServer
 {
 public:
-    RPCMethodServerStub(const RPCChannel *channel);
+    RPCMethodServerStub(RPCClientChannel *channel);
+
+public:
+    void Echo() override;
 
 private:
-    const RPCChannel *channel_ = nullptr;
+    RPCClientChannel *channel_ = nullptr;
 };
 
 

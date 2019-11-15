@@ -14,7 +14,7 @@ public:
     RPCServerChannel(const string &ip, unsigned short port);
     void start();
 private:
-    bool bind();
+    bool bindToAddr();
 
 };
 

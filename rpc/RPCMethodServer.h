@@ -8,7 +8,8 @@
 
 class RPCMethodServer
 {
-    virtual void Echo();
+public:
+    virtual void Echo(){}
 };
 
 

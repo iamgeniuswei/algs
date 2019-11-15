@@ -4,6 +4,14 @@
 
 #include "RPCMethodServerStub.h"
 #include "RPCChannel.h"
-RPCMethodServerStub::RPCMethodServerStub(const RPCChannel *channel)
+RPCMethodServerStub::RPCMethodServerStub(RPCClientChannel *channel)
 :channel_(channel)
 {}
+
+void RPCMethodServerStub::Echo()
+{
+    if(channel_)
+    {
+        channel_->callMethod();
+    }
+}
